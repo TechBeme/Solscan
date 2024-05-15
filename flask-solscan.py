@@ -2,19 +2,17 @@ import requests
 import json
 import pandas as pd
 from datetime import datetime
-from flask import Flask, request, send_file
+from flask import Flask, request, Response
 import io
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
-def get_transactions():
-    # Get the SOL contract address from the URL parameter
-    address = request.args.get('address')
+@app.route('/<address>', methods=['GET'])
+def get_transactions(address):
     if not address:
         return "Error: No address provided. Please specify an address parameter."
 
-    url = f"https://api.solscan.io/v2/account/transaction?address={address}&limit=10"
+    url = f"https://api.solscan.io/v2/account/transaction?address={address}&limit=99999999"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
         "Accept": "application/json, text/plain, */*",
@@ -56,12 +54,12 @@ def get_transactions():
         # Convert to DataFrame
         df = pd.DataFrame(extracted_data)
 
-        # Save to a CSV in memory using BytesIO
-        output = io.BytesIO()
+        # Convert DataFrame to CSV and display it on the webpage
+        output = io.StringIO()
         df.to_csv(output, index=False, float_format='%.9f')
-        output.seek(0)
+        csv_content = output.getvalue()
 
-        return send_file(output, mimetype='text/csv', download_name='transactions.csv', as_attachment=True)
+        return Response(csv_content, mimetype='text/plain')
     else:
         return f"Failed to retrieve data. Status code: {response.status_code}"
 
