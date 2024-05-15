@@ -51,8 +51,8 @@ def get_transactions(address):
         # Convert to DataFrame
         df = pd.DataFrame(extracted_data)
 
-        # Convert DataFrame to CSV
-        csv_data = df.to_csv(index=False, float_format='%.9f')
+        # Convert DataFrame to CSV with tab delimiter
+        csv_data = df.to_csv(index=False, sep='\t', float_format='%.9f')
 
         return render_template_string(TEMPLATE, csv_data=csv_data, address=address)
     else:
@@ -102,9 +102,9 @@ def download_csv(address):
         # Convert to DataFrame
         df = pd.DataFrame(extracted_data)
 
-        # Save to a CSV in memory
+        # Save to a CSV in memory with tab delimiter
         output = io.BytesIO()
-        df.to_csv(output, index=False, float_format='%.9f')
+        df.to_csv(output, index=False, sep='\t', float_format='%.9f')
         output.seek(0)
 
         return send_file(output, mimetype='text/csv', download_name='transactions.csv', as_attachment=True)
@@ -141,8 +141,8 @@ TEMPLATE = """
         <tbody>
             {% for row in csv_data.splitlines()[1:] %}
                 <tr>
-                    {% for cell in row.split('","') %}
-                        <td>{{ cell.replace('"', '') }}</td>
+                    {% for cell in row.split('\t') %}
+                        <td>{{ cell }}</td>
                     {% endfor %}
                 </tr>
             {% endfor %}
