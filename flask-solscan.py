@@ -7,7 +7,7 @@ import io
 
 app = Flask(__name__)
 
-@app.route('/get_transactions', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_transactions():
     # Get the SOL contract address from the URL parameter
     address = request.args.get('address')
