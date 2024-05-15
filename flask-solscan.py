@@ -2,7 +2,7 @@ import requests
 import json
 import pandas as pd
 from datetime import datetime
-from flask import Flask, request, jsonify, render_template_string, send_file
+from flask import Flask, request, render_template_string, send_file
 import io
 
 app = Flask(__name__)
@@ -34,7 +34,7 @@ def get_transactions(address):
             block = tx.get("slot", "")
             timestamp = tx.get("blockTime", "")
             time = datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S') if timestamp else ""
-            instructions_set = [instr.get("type", "") for instr in tx.get("parsedInstruction", [])]
+            instructions_set = sorted(set(instr.get("type", "") for instr in tx.get("parsedInstruction", [])))
             instructions = ", ".join(instructions_set)
             by = ", ".join(tx.get("signer", []))
             fee_sol = tx.get("fee", 0) / 1e9  # Convert from lamports to SOL
@@ -85,7 +85,7 @@ def download_csv(address):
             block = tx.get("slot", "")
             timestamp = tx.get("blockTime", "")
             time = datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S') if timestamp else ""
-            instructions_set = [instr.get("type", "") for instr in tx.get("parsedInstruction", [])]
+            instructions_set = sorted(set(instr.get("type", "") for instr in tx.get("parsedInstruction", [])))
             instructions = ", ".join(instructions_set)
             by = ", ".join(tx.get("signer", []))
             fee_sol = tx.get("fee", 0) / 1e9  # Convert from lamports to SOL
@@ -141,8 +141,8 @@ TEMPLATE = """
         <tbody>
             {% for row in csv_data.splitlines()[1:] %}
                 <tr>
-                    {% for cell in row.split(',') %}
-                        <td>{{ cell }}</td>
+                    {% for cell in row.split('","') %}
+                        <td>{{ cell.replace('"', '') }}</td>
                     {% endfor %}
                 </tr>
             {% endfor %}
