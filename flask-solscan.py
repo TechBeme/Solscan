@@ -141,8 +141,8 @@ TEMPLATE = """
         <tbody>
             {% for row in csv_data.splitlines()[1:] %}
                 <tr>
-                    {% for cell in row.split('","') %}
-                        <td>{{ cell.replace('"', '') }}</td>
+                    {% for cell in row.split(',') %}
+                        <td>{{ cell }}</td>
                     {% endfor %}
                 </tr>
             {% endfor %}
