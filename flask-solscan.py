@@ -7,7 +7,7 @@ import io
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/get_transactions', methods=['GET'])
 def get_transactions():
     # Get the SOL contract address from the URL parameter
     address = request.args.get('address')
@@ -61,7 +61,7 @@ def get_transactions():
         df.to_csv(output, index=False, float_format='%.9f')
         output.seek(0)
 
-        return send_file(output, mimetype='text/csv', attachment_filename='transactions.csv', as_attachment=True)
+        return send_file(output, mimetype='text/csv', download_name='transactions.csv', as_attachment=True)
     else:
         return f"Failed to retrieve data. Status code: {response.status_code}"
 
