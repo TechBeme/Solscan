@@ -7,7 +7,7 @@ import io
 
 app = Flask(__name__)
 
-@app.route('/get_transactions', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_transactions():
     # Get the SOL contract address from the URL parameter
     address = request.args.get('address')
@@ -56,8 +56,8 @@ def get_transactions():
         # Convert to DataFrame
         df = pd.DataFrame(extracted_data)
 
-        # Save to a CSV in memory
-        output = io.StringIO()
+        # Save to a CSV in memory using BytesIO
+        output = io.BytesIO()
         df.to_csv(output, index=False, float_format='%.9f')
         output.seek(0)
 
