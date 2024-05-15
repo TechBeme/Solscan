@@ -2,8 +2,7 @@ import requests
 import json
 import pandas as pd
 from datetime import datetime
-from flask import Flask, request, Response
-import io
+from flask import Flask, request, jsonify, render_template_string
 
 app = Flask(__name__)
 
@@ -25,11 +24,8 @@ def get_transactions(address):
 
     response = requests.get(url, headers=headers)
 
-    # Check the status code
     if response.status_code == 200:
         data = response.json()
-
-        # Extract the relevant information
         transactions = data["data"]["transactions"]
         extracted_data = []
         for tx in transactions:
@@ -54,14 +50,59 @@ def get_transactions(address):
         # Convert to DataFrame
         df = pd.DataFrame(extracted_data)
 
-        # Convert DataFrame to CSV and display it on the webpage
-        output = io.StringIO()
-        df.to_csv(output, index=False, float_format='%.9f')
-        csv_content = output.getvalue()
+        # Convert DataFrame to CSV
+        csv_data = df.to_csv(index=False, float_format='%.9f')
 
-        return Response(csv_content, mimetype='text/plain')
+        return render_template_string(TEMPLATE, csv_data=csv_data)
     else:
         return f"Failed to retrieve data. Status code: {response.status_code}"
+
+TEMPLATE = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions Table</title>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <h1>Transactions Table</h1>
+    <table id="transactions" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Signature</th>
+                <th>Block</th>
+                <th>Time</th>
+                <th>Instructions</th>
+                <th>By</th>
+                <th>Fee (SOL)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in csv_data.splitlines()[1:] %}
+                <tr>
+                    {% for cell in row.split(',') %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $('#transactions').DataTable();
+        });
+    </script>
+</body>
+</html>
+"""
 
 if __name__ == '__main__':
     app.run(debug=True)
