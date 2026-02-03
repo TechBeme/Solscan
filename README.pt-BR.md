@@ -43,6 +43,42 @@ Perfeito para:
 
 ---
 
+## 👨‍💻 Sobre o Desenvolvedor
+
+<div align="center">
+
+**Desenvolvido por Rafael Vieira (TechBeme)**
+
+[![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
+[![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
+[![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
+[![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
+
+**Desenvolvedor Full-Stack & Especialista em Automação**
+
+Especializado em **web scraping**, **sistemas de automação**, **aplicações web modernas** e **integrações de API**.
+
+### 💼 Principais Competências
+
+- 🔍 Web Scraping & Extração de Dados
+- ⚡ Automação de Processos & Workflows
+- 💻 Desenvolvimento Full-Stack (Flask, React, Python, TypeScript)
+- 🔌 Desenvolvimento de APIs & Integrações
+- 🗄️ Design e Otimização de Bancos de Dados
+- 🎨 Desenvolvimento de UI/UX Moderno
+
+### 🌍 Idiomas
+
+🇺🇸 **English** • 🇧🇷 **Português** • 🇪🇸 **Español**
+
+### 📬 Contato
+
+**Email**: [contact@techbe.me](mailto:contact@techbe.me)
+
+</div>
+
+---
+
 ## ✨ Funcionalidades
 
 ### Visualização de Dados
@@ -273,6 +309,8 @@ Este projeto é **independente** e **não é afiliado ao Solscan ou Solana**. É
 **Desenvolvido por [Rafael Vieira (TechBeme)](https://github.com/TechBeme)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
+[![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
+[![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
 [![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
 
 ⭐ Dê uma estrela neste repo se você achar útil!
