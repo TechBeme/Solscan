@@ -43,42 +43,6 @@ Perfect for:
 
 ---
 
-## 👨‍💻 About the Developer
-
-<div align="center">
-
-**Developed by Rafael Vieira (TechBeme)**
-
-[![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
-[![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
-[![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
-[![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
-
-**Full-Stack Developer & Automation Specialist**
-
-Specialized in **web scraping**, **automation systems**, **modern web applications**, and **API integrations**.
-
-### 💼 Core Expertise
-
-- 🔍 Web Scraping & Data Extraction
-- ⚡ Process Automation & Workflows
-- 💻 Full-Stack Development (Flask, React, Python, TypeScript)
-- 🔌 API Development & Integrations
-- 🗄️ Database Design & Optimization
-- 🎨 Modern UI/UX Development
-
-### 🌍 Languages
-
-🇺🇸 **English** • 🇧🇷 **Português** • 🇪🇸 **Español**
-
-### 📬 Contact
-
-**Email**: [contact@techbe.me](mailto:contact@techbe.me)
-
-</div>
-
----
-
 ## ✨ Features
 
 ### Data Visualization
