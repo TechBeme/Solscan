@@ -258,16 +258,6 @@ Este projeto é **independente** e **não é afiliado ao Solscan ou Solana**. É
 
 ---
 
-## 🙏 Agradecimentos
-
-- [Solscan](https://solscan.io/) por fornecer a API
-- Ecossistema blockchain [Solana](https://solana.com/)
-- Framework web [Flask](https://flask.palletsprojects.com/)
-- [DataTables](https://datatables.net/) para tabelas interativas
-- Todos os contribuidores de código aberto
-
----
-
 <div align="center">
 
 **Desenvolvido por [Rafael Vieira (TechBeme)](https://github.com/TechBeme)**
