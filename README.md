@@ -35,7 +35,7 @@
 
 **Solscan Transaction Viewer** is a lightweight Flask web application that fetches and displays transaction history for any Solana wallet address using the Solscan API. It provides an interactive, searchable table view with sorting capabilities and CSV export functionality.
 
-Perfect for:
+Use cases:
 - 📊 Analyzing wallet transaction history
 - 🔍 Searching and filtering transactions
 - 📥 Exporting transaction data to CSV
@@ -54,13 +54,13 @@ Perfect for:
 ### Export Capabilities
 - **CSV Export**: Download transaction data in tab-delimited CSV format
 - **Formatted Data**: Properly formatted SOL fees (9 decimal places)
-- **Complete History**: Export all transactions at once
+- **Transaction History**: Export all transactions at once
 
 ### Technical Features
 - **High Limit Queries**: Fetches up to 99,999,999 transactions per address
 - **Instruction Parsing**: Groups and displays parsed instruction types
 - **Fee Conversion**: Automatic conversion from lamports to SOL
-- **In-Memory Storage**: Fast CSV generation and downloads
+- **In-Memory Storage**: Builds the CSV in memory before returning the download
 
 ---
 
@@ -206,9 +206,9 @@ gunicorn -w 9 -b 0.0.0.0:8000 flask-solscan:app  # For 4-core CPU
 Contributions are welcome! Here's how you can help:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/export-filter`)
+3. Commit your changes (`git commit -m 'Add export filter'`)
+4. Push to the branch (`git push origin feature/export-filter`)
 5. Open a Pull Request
 
 ### Reporting Issues

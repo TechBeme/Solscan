@@ -35,47 +35,11 @@
 
 **Solscan Transaction Viewer** es una aplicación web Flask ligera que obtiene y muestra el historial de transacciones de cualquier dirección de billetera Solana usando la API de Solscan. Proporciona una vista de tabla interactiva y buscable con capacidades de ordenamiento y exportación a CSV.
 
-Perfecto para:
+Casos de uso:
 - 📊 Analizar el historial de transacciones de billeteras
 - 🔍 Buscar y filtrar transacciones
 - 📥 Exportar datos de transacciones a CSV
 - 📈 Rastrear actividad en blockchain
-
----
-
-## 👨‍💻 Sobre el Desarrollador
-
-<div align="center">
-
-**Desarrollado por Rafael Vieira (TechBeme)**
-
-[![GitHub](https://img.shields.io/badge/GitHub-TechBeme-181717?logo=github)](https://github.com/TechBeme)
-[![Fiverr](https://img.shields.io/badge/Fiverr-Tech__Be-1DBF73?logo=fiverr)](https://www.fiverr.com/tech_be)
-[![Upwork](https://img.shields.io/badge/Upwork-Profile-14a800?logo=upwork)](https://www.upwork.com/freelancers/~01f0abcf70bbd95376)
-[![Email](https://img.shields.io/badge/Email-contact@techbe.me-EA4335?logo=gmail)](mailto:contact@techbe.me)
-
-**Desarrollador Full-Stack & Especialista en Automatización**
-
-Especializado en **web scraping**, **sistemas de automatización**, **aplicaciones web modernas** e **integraciones de API**.
-
-### 💼 Experiencia Principal
-
-- 🔍 Web Scraping & Extracción de Datos
-- ⚡ Automatización de Procesos & Workflows
-- 💻 Desarrollo Full-Stack (Flask, React, Python, TypeScript)
-- 🔌 Desarrollo de APIs & Integraciones
-- 🗄️ Diseño y Optimización de Bases de Datos
-- 🎨 Desarrollo de UI/UX Moderno
-
-### 🌍 Idiomas
-
-🇺🇸 **English** • 🇧🇷 **Português** • 🇪🇸 **Español**
-
-### 📬 Contacto
-
-**Email**: [contact@techbe.me](mailto:contact@techbe.me)
-
-</div>
 
 ---
 
@@ -90,13 +54,13 @@ Especializado en **web scraping**, **sistemas de automatización**, **aplicacion
 ### Capacidades de Exportación
 - **Exportación CSV**: Descargue datos de transacciones en formato CSV delimitado por tabulaciones
 - **Datos Formateados**: Tarifas SOL correctamente formateadas (9 decimales)
-- **Historial Completo**: Exporte todas las transacciones de una vez
+- **Historial de Transacciones**: Exporte todas las transacciones de una vez
 
 ### Características Técnicas
 - **Consultas de Alto Límite**: Obtiene hasta 99.999.999 transacciones por dirección
 - **Análisis de Instrucciones**: Agrupa y muestra tipos de instrucciones analizadas
 - **Conversión de Tarifas**: Conversión automática de lamports a SOL
-- **Almacenamiento en Memoria**: Generación y descargas rápidas de CSV
+- **Almacenamiento en Memoria**: Genera el CSV en memoria antes de devolver la descarga
 
 ---
 
@@ -243,7 +207,7 @@ gunicorn -w 9 -b 0.0.0.0:8000 flask-solscan:app  # Para CPU de 4 núcleos
 
 1. Haz un fork del repositorio
 2. Crea una rama de característica (`git checkout -b feature/caracteristica-increible`)
-3. Haz commit de tus cambios (`git commit -m 'Agrega característica increíble'`)
+3. Haz commit de tus cambios (`git commit -m 'Agrega filtro de exportación'`)
 4. Haz push a la rama (`git push origin feature/caracteristica-increible`)
 5. Abre un Pull Request
 
@@ -291,16 +255,6 @@ Este proyecto es **independiente** y **no está afiliado con Solscan o Solana**.
 - Respeta límites de tasa y términos de API
 - Sin garantía o garantía de precisión de datos
 - Los usuarios son responsables del cumplimiento de las leyes aplicables
-
----
-
-## 🙏 Agradecimientos
-
-- [Solscan](https://solscan.io/) por proporcionar la API
-- Ecosistema blockchain [Solana](https://solana.com/)
-- Framework web [Flask](https://flask.palletsprojects.com/)
-- [DataTables](https://datatables.net/) para tablas interactivas
-- Todos los contribuidores de código abierto
 
 ---
 

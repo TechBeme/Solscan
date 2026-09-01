@@ -35,7 +35,7 @@
 
 **Solscan Transaction Viewer** é uma aplicação web Flask leve que busca e exibe o histórico de transações de qualquer endereço de carteira Solana usando a API do Solscan. Fornece uma visualização de tabela interativa e pesquisável com recursos de ordenação e exportação para CSV.
 
-Perfeito para:
+Casos de uso:
 - 📊 Analisar histórico de transações de carteiras
 - 🔍 Pesquisar e filtrar transações
 - 📥 Exportar dados de transações para CSV
@@ -54,13 +54,13 @@ Perfeito para:
 ### Capacidades de Exportação
 - **Exportação CSV**: Baixe dados de transações em formato CSV delimitado por tabulação
 - **Dados Formatados**: Taxas SOL devidamente formatadas (9 casas decimais)
-- **Histórico Completo**: Exporte todas as transações de uma vez
+- **Histórico de Transações**: Exporte todas as transações de uma vez
 
 ### Recursos Técnicos
 - **Consultas de Alto Limite**: Busca até 99.999.999 transações por endereço
 - **Análise de Instruções**: Agrupa e exibe tipos de instruções analisadas
 - **Conversão de Taxas**: Conversão automática de lamports para SOL
-- **Armazenamento em Memória**: Geração e downloads rápidos de CSV
+- **Armazenamento em Memória**: Monta o CSV em memória antes de retornar o download
 
 ---
 
@@ -207,7 +207,7 @@ Contribuições são bem-vindas! Veja como você pode ajudar:
 
 1. Faça um fork do repositório
 2. Crie uma branch de feature (`git checkout -b feature/funcionalidade-incrivel`)
-3. Commit suas mudanças (`git commit -m 'Adiciona funcionalidade incrível'`)
+3. Commit suas mudanças (`git commit -m 'Adiciona filtro de exportação'`)
 4. Push para a branch (`git push origin feature/funcionalidade-incrivel`)
 5. Abra um Pull Request
 
